@@ -4,6 +4,30 @@
 
 定位很简单：**纯文档工作流 + 薄初始化脚本**。它不提供隐藏 runtime、后台调度器或 Pi / 其他 harness 专用目录，只负责把一个空项目初始化成适合 Codex 长期协作的最小结构。
 
+## 一键在线安装
+
+### macOS / Linux
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ZhcChen/agent-light-workflow/main/scripts/install.sh | bash
+```
+
+### Windows PowerShell
+
+```powershell
+irm https://raw.githubusercontent.com/ZhcChen/agent-light-workflow/main/scripts/install-windows.ps1 | iex
+```
+
+安装完成后可直接使用：
+
+```bash
+agent-light-workflow .
+agent-light-workflow /path/to/project
+agent-light-workflow --force /path/to/project
+```
+
+脚本可重复运行；若本地已安装，会更新仓库并刷新命令包装脚本。
+
 ## 当前为什么先落 Codex 版
 
 - 当前这类模型已经足够强，普通工程任务通常不需要重型编排
@@ -43,7 +67,17 @@ docs/
 
 ## 初始化用法
 
-在本目录下执行：
+### 安装后
+
+```bash
+agent-light-workflow .
+agent-light-workflow /path/to/project
+agent-light-workflow --force /path/to/project
+```
+
+### 从源码目录直接执行
+
+在本仓库目录下执行：
 
 ```bash
 ./init.sh .
